@@ -1,0 +1,100 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #fff8dc; /* Cornsilk */
+    --foreground: #3e2723; /* Dark brown */
+    --card: #fff3e0; /* Very light orange */
+    --card-foreground: #3e2723;
+    --popover: #ffecb3; /* Light yellow */
+    --popover-foreground: #3e2723;
+    --primary: #ffeb3b; /* Bright yellow */
+    --primary-foreground: #3e2723;
+    --secondary: #8d6e63; /* Medium brown */
+    --secondary-foreground: #fff8dc;
+    --muted: #f5f5f5; /* Light gray */
+    --muted-foreground: #757575;
+    --accent: #ff9800; /* Orange */
+    --accent-foreground: #3e2723;
+    --destructive: #d84315; /* Deep orange */
+    --destructive-foreground: #fff8dc;
+    --border: #ffe0b2; /* Light orange */
+    --input: #ffe0b2;
+    --ring: #ffd54f; /* Amber */
+    --radius: 1rem; /* 16px */
+  }
+
+  .dark {
+    --background: #3e2723;
+    --foreground: #fff8dc;
+    --card: #5d4037;
+    --card-foreground: #fff8dc;
+    --popover: #8d6e63;
+    --popover-foreground: #fff8dc;
+    --primary: #ffeb3b;
+    --primary-foreground: #3e2723;
+    --secondary: #6d4c41;
+    --secondary-foreground: #fff8dc;
+    --muted: #424242;
+    --muted-foreground: #bdbdbd;
+    --accent: #ff9800;
+    --accent-foreground: #fff8dc;
+    --destructive: #bf360c;
+    --destructive-foreground: #fff8dc;
+    --border: #8d6e63;
+    --input: #8d6e63;
+    --ring: #ffd54f;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background-image: theme("backgroundImage.hex-pattern");
+    background-size: 60px 60px;
+    animation: hexagon-background 10s linear infinite;
+  }
+}
+
+.glass-card {
+  @apply bg-white/30 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.hover-scale {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-in-bottom {
+  animation: slideInBottom 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
