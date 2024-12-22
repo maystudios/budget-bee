@@ -1,0 +1,4 @@
+<!-- public/images/hexagons.svg -->
+<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="30,0 60,15 60,45 30,60 0,45 0,15" fill="rgba(255, 217, 102, 0.1)" stroke="none"/>
+</svg>
